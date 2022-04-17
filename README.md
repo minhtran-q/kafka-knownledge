@@ -4,3 +4,5 @@ Kafka version: 3.1
 ## Topic configuration
 ## Producer configuration
 ## Consumer configuration
+## Feature
+### Data retention
