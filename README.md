@@ -14,3 +14,26 @@ Kafka version: 3.1
 
 ## Feature
 ### Data retention
+<details>
+  <summary>Types of Cleanup Policies</summary>
+  <br/>
+  
+  + delete
+  + compact
+  + delete, compact
+  
+</details>
+<details>
+  <summary>Setting data retention</summary>
+  <br/>
+  
+  To configure the cleanup policy, please follow the below steps:
+  1. Choose cleanup policy
+  
+  `cleanup.policy`
+  
+  + **Default:**	delete
+  + **Valid Values:**	[compact, delete]
+  + **Server Default Property:** log.cleanup.policy
+  
+</details>
