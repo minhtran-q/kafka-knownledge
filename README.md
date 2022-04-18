@@ -36,4 +36,8 @@ Kafka version: 3.1
   + **Valid Values:**	[compact, delete]
   + **Server Default Property:** log.cleanup.policy
   
+  Compact policy:
+  
+  + 
+  
 </details>
