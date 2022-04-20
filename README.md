@@ -42,3 +42,11 @@ Kafka version: 3.1
   
   Ref: https://medium.com/@sunny_81705/kafka-log-retention-and-cleanup-policies-c8d9cb7e09f8
 </details>
+<details>
+  <summary>Kafka tombstone</summary>
+  <br/>
+  
+  
+  
+  Ref: https://medium.com/@sunny_81705/kafka-log-retention-and-cleanup-policies-c8d9cb7e09f8
+</details>
