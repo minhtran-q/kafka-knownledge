@@ -12,6 +12,7 @@ Kafka version: 3.1
 </details>
 
 ## Feature
+### Transaction
 ### Data retention
 <details>
   <summary>Types of Cleanup Policies</summary>
