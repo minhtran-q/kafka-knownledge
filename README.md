@@ -1,9 +1,8 @@
 # Kafka knownledge
 Kafka version: 3.1
-## Broker configuration
-## Topic configuration
-## Producer configuration
-## Consumer configuration
+## Kafka
+## Producer
+## Consumer
 <details>
   <summary>Poll and Internal Threads Behavior</summary>
   <br/>
