@@ -24,8 +24,8 @@ Kafka version: 3.1
   + The producer publish 1 message, and current offset will be 2
   
   Ref: https://stackoverflow.com/questions/59152915/spring-kafka-transaction-causes-producer-per-message-offset-increased-by-two#:~:text=The%20offset%20is%20increased%20by,t%20commit%20the%20consuming%20offset.&text=However%20the%20count%20of%20messages,the%20msgs%20from%20topic2%20continuously.
-  
 </details>
+
 ### Data retention
 <details>
   <summary>Types of Cleanup Policies</summary>
