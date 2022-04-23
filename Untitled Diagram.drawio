@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-20T16:26:34.598Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="3f_vK0ZisWQLLaTSErl5" version="17.4.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-23T17:01:16.909Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="r2k6qMX7vlvXrxnVh85l" version="17.4.5" type="github">
   <diagram id="kgpKYQtTHZ0yAKxKKP6v" name="Page-1">
     <mxGraphModel dx="1422" dy="794" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -16,52 +16,55 @@
         <mxCell id="3nuBFxr9cyL0pnOWT2aG-6" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="3nuBFxr9cyL0pnOWT2aG-5" vertex="1">
           <mxGeometry x="45" y="73" width="10" height="167" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-1" value=":Application" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-1" value=":Application" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
           <mxGeometry x="71" y="80" width="100" height="300" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="xih2-5BVRlrgKrml7yA8-1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;" parent="xih2-5BVRlrgKrml7yA8-1" vertex="1">
           <mxGeometry x="45" y="70" width="10" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.54;exitY=0.242;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="3nuBFxr9cyL0pnOWT2aG-1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.54;exitY=0.242;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="3nuBFxr9cyL0pnOWT2aG-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="356" y="150" as="sourcePoint" />
             <mxPoint x="592" y="153" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-8" value="fetch" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="xih2-5BVRlrgKrml7yA8-5">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-8" value="fetch" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="xih2-5BVRlrgKrml7yA8-5" vertex="1" connectable="0">
           <mxGeometry x="0.2041" y="-1" relative="1" as="geometry">
             <mxPoint x="-34" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-11" value="fetch records" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-11" value="fetch records" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="313" y="629" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-12" value="revice fetch request" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-12" value="revice fetch request" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="582" y="629" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-13" value="collect records" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-13" value="collect byte data" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="582" y="738" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-14" value="poll records" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-14" value="poll records" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="149" y="437" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-15" value="have data" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-15" value="have data" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="169" y="619" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-16" value="poll records in cache" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-16" value="poll records in cache" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="149" y="738" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-18" value="check cache" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-18" value="check cache" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="149" y="520" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-19" value="revice records from fetch response" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-19" value="revice records from fetch response" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="313" y="738" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-20" value="put records to cache" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="xih2-5BVRlrgKrml7yA8-20" value="put records to cache" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="313" y="847" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="xih2-5BVRlrgKrml7yA8-21" value="have data" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="602" y="837" width="80" height="80" as="geometry" />
+        <mxCell id="xih2-5BVRlrgKrml7yA8-21" value="" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="589.5" y="836" width="105" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="n0Qw8HLsbLLvSBlnaumX-1" value="&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(42 , 42 , 42) ; display: inline ; float: none&quot;&gt;&lt;b&gt;fetch.min.bytes&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(42 , 42 , 42) ; display: inline ; float: none&quot;&gt; &amp;lt; byte data &amp;lt; &lt;/span&gt;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(42 , 42 , 42) ; display: inline ; float: none&quot;&gt;&lt;b&gt;fetch.max.bytes&lt;/b&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="511.5" y="956" width="271.5" height="28" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
