@@ -19,6 +19,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>Poll and Internal Threads Behavior</summary>
   <br/>
   
+  ![](images/consumer-fetch.png)
   
   Ref: https://www.conduktor.io/kafka/kafka-consumer-important-settings-poll-and-internal-threads-behavior
 </details>
