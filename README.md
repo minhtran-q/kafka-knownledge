@@ -23,6 +23,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   Ref: https://www.conduktor.io/kafka/kafka-consumer-important-settings-poll-and-internal-threads-behavior
 </details>
 
+## Zookeeper
 ## Feature
 ### Transaction
 <details>
