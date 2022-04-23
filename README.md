@@ -1,6 +1,18 @@
 # Kafka knownledge
 Kafka version: 3.1
 ## Kafka
+Apache Kafka is a streaming platform that is free and open-source.
+<details>
+  <summary>Some features of Kafka</summary>
+  <br/>
+  
+  + High-throughput: Kafka has a built-in patriation system known as a Topic
+  + Fault-Tolerant: Kafka is resistant to node/machine failure within a cluster.
+  + Durability: As Kafka supports messages replication, so,  messages are never lost. It is one of the reasons behind durability.
+  + Scalability: Kafka can be scaled-out, without incurring any downtime on the fly by adding additional nodes.
+  
+</details>
+
 ## Producer
 ## Consumer
 <details>
