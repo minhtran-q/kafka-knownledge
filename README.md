@@ -55,6 +55,7 @@ ZooKeeper is a centralized service for maintaining configuration information, na
 
   + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302
   + Ref: https://developpaper.com/kafka-controller-election-principle/
+  + Ref: https://cwiki.apache.org/confluence/display/KAFKA/KIP-631%3A+The+Quorum-based+Kafka+Controller
   
 </details>
 
