@@ -26,6 +26,9 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   3. **Topic Configuration:** ZooKeeper maintains the configuration of all topics, including the list of existing topics, number of partitions for each topic, location of the replicas, configuration overrides for topics, preferred leader node, among other details.
   4. **Access Control Lists:** Access control lists or ACLs for all the topics
   
+  + Ref: https://www.cloudkarafka.com/blog/cloudkarafka-what-is-zookeeper.html
+  + Ref: https://data-flair.training/blogs/zookeeper-in-kafka/
+  
 </details>
 
 
