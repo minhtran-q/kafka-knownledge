@@ -55,7 +55,7 @@ ZooKeeper is a centralized service for maintaining configuration information, na
 ## Producer
 ## Consumer
 
-### How consumer work?
+### How do consumers work?
 
 <details>
   <summary>Poll and Internal Threads Behavior</summary>
