@@ -12,6 +12,18 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Scalability: Kafka can be scaled-out, without incurring any downtime on the fly by adding additional nodes.
   
 </details>
+## Zookeeper
+
+ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+
+<details>
+  <summary>Why is Zookeeper necessary for Apache Kafka?</summary>
+  <br/>
+  
+  
+  
+</details>
+
 
 ## Broker
 
@@ -42,6 +54,9 @@ Apache Kafka is a streaming platform that is free and open-source.
 
 ## Producer
 ## Consumer
+
+### How consumer work?
+
 <details>
   <summary>Poll and Internal Threads Behavior</summary>
   <br/>
