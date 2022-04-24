@@ -77,7 +77,21 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   <summary>Some important consumers</summary>
   <br/>
   
+  `fetch.min.bytes`
   
+  `fetch.max.bytes`
+  
+  `fetch.max.wait.ms`
+  
+  `max.partition.fetch.bytes`
+  
+  `max.poll.records`
+  
+  `max.poll.interval.ms`
+  
+  `session.timeout.ms`
+  
+  `partition.assignment.strategy`
   
   Ref: https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html#:~:text=fetch.max.wait.ms,amount%20of%20data%20to%20return.
 </details>
