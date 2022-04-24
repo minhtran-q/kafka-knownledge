@@ -34,6 +34,14 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Ref: https://developpaper.com/kafka-controller-election-principle/
 </details>
 
+<details>
+  <summary>Controller election principle</summary>
+  <br/>
+
+  
+  
+</details>
+
 
 ## Producer
 ## Consumer
