@@ -103,6 +103,16 @@ ZooKeeper is a centralized service for maintaining configuration information, na
     
 </details>
 
+### Consumer group
+
+<details>
+  <summary>Consumers & consumer groups</summary>
+  <br/>
+  
+  ![](images/consumer-group.png)
+  
+</details>
+
 ## Feature
 ### Transaction
 <details>
