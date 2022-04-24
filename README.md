@@ -27,18 +27,15 @@ Apache Kafka is a streaming platform that is free and open-source.
   + When the leader partition fails, the controller is responsible for selecting a new leader replica for the partition.
   + When the ISR set of a partition changes, the controller is responsible for notifying all brokers to update their metadata information
   + When increasing the number of partitions for a topic, the controller is responsible for the reallocation of partitions.
-  
-  <br/>
-  
-  + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302
-  + Ref: https://developpaper.com/kafka-controller-election-principle/
+
 </details>
 
 <details>
   <summary>Controller election principle</summary>
   <br/>
 
-  
+  + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302
+  + Ref: https://developpaper.com/kafka-controller-election-principle/
   
 </details>
 
