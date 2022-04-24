@@ -20,7 +20,11 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   <summary>Why is Zookeeper necessary for Apache Kafka?</summary>
   <br/>
   
-  
+  Zookeeper has four primary functions
+  1. **Controller Election**
+  2. **Cluster Membership:** Zookeeper also maintains a list of all the brokers
+  3. **Topic Configuration:** ZooKeeper maintains the configuration of all topics, including the list of existing topics, number of partitions for each topic, location of the replicas, configuration overrides for topics, preferred leader node, among other details.
+  4. **Access Control Lists:**
   
 </details>
 
@@ -73,18 +77,28 @@ ZooKeeper is a centralized service for maintaining configuration information, na
 </details>
 
 <details>
-  <summary>Kafka offsets</summary>
+  <summary>__consumer_offsets topic</summary>
   <br/>
 
   Since 0.9v Kafka stores topic offsets on the broker directly instead of relying on Zookeeper.
   
-  Offsets in Kafka are stored as messages in a separate topic named '__consumer_offsets' . Each consumer commits a message into the topic at periodic intervals.
-
-  Ref: https://hackernoon.com/kafka-and-zookeeper-offsets-vvbe3xj7
+  Offsets in Kafka are stored as messages in a separate topic named `__consumer_offsets` . Each consumer commits a message into the topic at periodic intervals.
+  
+  The **Consumer Groups** are stored in the `__consumer_offsets` topic. That topic contains both the committed offsets and the groups metadata (group.id, members, generation, leader, ...). Groups are stored using `GroupMetadataMessage` messages (Offsets use `OffsetsMessage`).
+  
+  _Dump the group metadata:_
+  
+  ```
+  ./bin/kafka-console-consumer.sh \
+  --formatter "kafka.coordinator.group.GroupMetadataManager\$GroupMetadataMessageFormatter" \
+  --bootstrap-server localhost:9092 \
+  --topic __consumer_offsets
+  ```
+  
+  + Ref: https://hackernoon.com/kafka-and-zookeeper-offsets-vvbe3xj7
+  + Ref: https://stackoverflow.com/questions/59433201/where-are-consumer-groups-list-stored-in-recent-kafka-version#:~:text=Since%20Kafka%200.10%2C%20the%20list,leader%2C%20...).
+    
 </details>
-
-
-
 
 ## Feature
 ### Transaction
