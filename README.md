@@ -13,6 +13,28 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
+## Broker
+
+### Controller
+
+<details>
+  <summary>What is controller?</summary>
+  <br/>
+  
+  A controller is not too complex — it is a normal broker that simply has additional responsibility. It's responsible for managing the state of all partitions and replicas
+  
+  For example:
+  + When the leader partition fails, the controller is responsible for selecting a new leader replica for the partition.
+  + When the ISR set of a partition changes, the controller is responsible for notifying all brokers to update their metadata information
+  + When increasing the number of partitions for a topic, the controller is responsible for the reallocation of partitions.
+  
+  <br/>
+  
+  + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302
+  + Ref: https://developpaper.com/kafka-controller-election-principle/
+</details>
+
+
 ## Producer
 ## Consumer
 <details>
