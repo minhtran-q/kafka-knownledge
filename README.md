@@ -66,7 +66,26 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   Ref: https://www.conduktor.io/kafka/kafka-consumer-important-settings-poll-and-internal-threads-behavior
 </details>
 
-## Zookeeper
+<details>
+  <summary>Some important consumers</summary>
+  <br/>
+  
+</details>
+
+<details>
+  <summary>Kafka offsets</summary>
+  <br/>
+
+  Since 0.9v Kafka stores topic offsets on the broker directly instead of relying on Zookeeper.
+  
+  Offsets in Kafka are stored as messages in a separate topic named '__consumer_offsets' . Each consumer commits a message into the topic at periodic intervals.
+
+  Ref: https://hackernoon.com/kafka-and-zookeeper-offsets-vvbe3xj7
+</details>
+
+
+
+
 ## Feature
 ### Transaction
 <details>
