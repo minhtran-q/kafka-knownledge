@@ -53,11 +53,19 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   <summary>Controller election</summary>
   <br/>
 
+  When the controller goes down,
+  1. Zookeeper informs all the brokers that the controller failed.
+  2. All the brokers will apply to be the controller.
+  3. The first broker who applies for this position will become the controller.
+  
   + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302
   + Ref: https://developpaper.com/kafka-controller-election-principle/
   + Ref: https://cwiki.apache.org/confluence/display/KAFKA/KIP-631%3A+The+Quorum-based+Kafka+Controller
   
 </details>
+
+### Fault tolerance
+
 
 
 ## Producer
