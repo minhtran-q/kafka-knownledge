@@ -22,7 +22,7 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   
   Zookeeper has four primary functions
   1. **Controller Election**
-  2. **Cluster Membership:** Zookeeper also maintains a list of all the brokers
+  2. **Cluster Membership:** Zookeeper also maintains a list of all the brokers (ex: ISRs, ...)
   3. **Topic Configuration:** ZooKeeper maintains the configuration of all topics, including the list of existing topics, number of partitions for each topic, location of the replicas, configuration overrides for topics, preferred leader node, among other details.
   4. **Access Control Lists:** Access control lists or ACLs for all the topics
   
