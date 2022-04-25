@@ -66,7 +66,22 @@ ZooKeeper is a centralized service for maintaining configuration information, na
 
 ### Fault tolerance
 
+Fault tolerance in Kafka is done by copying the partition data to other brokers which are known as **replicas**. Its also called a _replication factor_.
 
+Each broker will hold one or more partitions. And each of these partitions can either be a **replica** or **leader** for the topic. All the writes and reads to a topic go through the **leader** and the **leader** coordinates to update replicas with new data.
+
+<details>
+  <summary>Leader partition election</summary>
+  <br/>
+
+  When the leader parition goes down:
+  1. The Zookeeper informs the Controller.
+  2. The controller selects one of the in-sync replicas (ISR) as the leader.
+  3. When the broker comes back up, then it will be assigned again as the leader.
+  
+  + Ref: https://www.confluent.io/blog/hands-free-kafka-replication-a-lesson-in-operational-simplicity/#:~:text=KAFKA%20REPLICATION:%200%20TO%2060%20IN%201%20MINUTE&text=Every%20topic%20partition%20in%20Kafka,in%20the%20presence%20of%20failures.
+  + Ref: https://medium.com/@anchan.ashwithabg95/fault-tolerance-in-apache-kafka-d1f0444260cf
+</details>
 
 ## Producer
 ## Consumer
