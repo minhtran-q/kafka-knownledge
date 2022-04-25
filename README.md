@@ -106,7 +106,7 @@ Each broker will hold one or more partitions. And each of these partitions can e
   Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
 </details>
 <details>
-  <summary>Exactly-once</summary>
+  <summary>Exactly-Once Processing</summary>
   <br/>
   
   
