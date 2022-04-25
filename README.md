@@ -71,6 +71,16 @@ Fault tolerance in Kafka is done by copying the partition data to other brokers 
 Each broker will hold one or more partitions. And each of these partitions can either be a **replica** or **leader** for the topic. All the writes and reads to a topic go through the **leader** and the **leader** coordinates to update replicas with new data.
 
 <details>
+  <summary>Leader, follower, ISRs</summary>
+  <br/>
+
+  **Leader partition:** A partition in the topic and is elected as leader. The leader partition responsible for reading/writing data
+  **Follower partition:** A replica of leader on other brokers.
+  **ISRs(in-sync replica):** the replicated partitions (followers) that are in sync with its leader.
+  
+</details>
+
+<details>
   <summary>Leader partition election</summary>
   <br/>
 
