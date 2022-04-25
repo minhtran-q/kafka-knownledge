@@ -94,6 +94,26 @@ Each broker will hold one or more partitions. And each of these partitions can e
 </details>
 
 ## Producer
+### Message Delivery Guarantees
+<details>
+  <summary>Types of delivery</summary>
+  <br/>
+  
+  1. At-most once: Message loss is possible if the producer doesn’t retry on failures.
+  2. At-least-once: There is no chance of message loss but the message can be duplicated if the producer retries when the message is already persisted.
+  3. Exactly-once: Every message is guaranteed to be persisted in Kafka exactly once without any duplicates and data loss even where there is a broker failure or producer retry.
+  
+  Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
+</details>
+<details>
+  <summary>Exactly-once</summary>
+  <br/>
+  
+  
+  
+  Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
+</details>
+
 ## Consumer
 
 ### How do consumers work?
