@@ -167,9 +167,26 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
 ### Partitioning strategies
 
+<details>
+  <summary>Types of Strategies</summary>
+  <br/>
+  
+  
+  + Ref: https://www.codetd.com/en/article/13051951
+  + Ref: https://www.confluent.io/blog/apache-kafka-producer-improvements-sticky-partitioner/
+</details>
+
 ## Consumer
 
 ### Partition assignment strategies
+
+<details>
+  <summary>Types of Strategies</summary>
+  <br/>
+  
+  
+  + Ref: https://medium.com/streamthoughts/understanding-kafka-partition-assignment-strategies-and-how-to-write-your-own-custom-assignor-ebeda1fc06f3#:~:text=Kafka%20Clients%20provides%20three%20built,%3A%20Range%2C%20RoundRobin%20and%20StickyAssignor.
+</details>
 
 ### How do consumers work?
 
