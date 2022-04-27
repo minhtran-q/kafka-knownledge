@@ -165,7 +165,11 @@ Each broker will hold one or more partitions. And each of these partitions can e
   
 </details>
 
+### Partitioning strategies
+
 ## Consumer
+
+### Partition assignment strategies
 
 ### How do consumers work?
 
