@@ -159,6 +159,14 @@ Each broker will hold one or more partitions. And each of these partitions can e
   
   The two types of Control Messages are `COMMIT` and `ABORT`.
   
+  5. _Transaction Coordinator_
+  
+  Transaction Coordinator maintains a map of `transactional.id` holds the metadata includes: PID, Epoch Number, transaction timeout, last updated time of the transaction, transaction status, list of Topic Partitions
+  
+  6. _Transaction Log_
+  
+  __transaction_state topic
+  
   + Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
 </details>
 <details>
