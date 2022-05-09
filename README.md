@@ -143,6 +143,11 @@ Each broker will hold one or more partitions. And each of these partitions can e
   With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is not guaranteed when the producer is restarted.      
   When the producer is restarted, it will get a new `Pid` (or the same one, but with a new _epoch number_, when a `TransactionalId` is specified in the config).
   
+  ```
+  producerProps.put("enable.idempotence", "true");
+  producerProps.put("transactional.id", "100");
+  ```
+  
 </details>
 <details>
   <summary>Transactional Guarantee</summary>
