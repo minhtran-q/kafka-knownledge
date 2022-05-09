@@ -138,6 +138,28 @@ Each broker will hold one or more partitions. And each of these partitions can e
   + Ref: https://cwiki.apache.org/confluence/display/KAFKA/KIP-98+-+Exactly+Once+Delivery+and+Transactional+Messaging
 </details>
 <details>
+  <summary>Terminologies</summary>
+  <br/>
+  
+  1. _Producer ID (PID)_
+  
+  A Unique Identifier assigned to the producer by the broker.
+
+  If `transactional.id` is not specified, a fresh PID is generated every-time on producer initialization. If `transactional.id` is specified,the broker stores mapping of Transactional ID to PID so that it can return the same PID on producer restart.
+  
+  2. _Epoch Number_
+  The epoch number is an integer that is used alongside PID to uniquely identify the latest active producer which is only relevant if `transactional.id` is set.
+  
+  3. _Sequence Number_
+  The producer maintains Sequence Number for every message per PID and Topic Partition combination. The boroker will reject if it receives a message whoes **Sequence Number** is not exactly one greater than what was stored in the broker.
+  
+  4. _Control Message_
+  
+  The two types of Control Messages are `COMMIT` and `ABORT`.
+  
+  + Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
+</details>
+<details>
   <summary>Idempotent Guarantee</summary>
   <br/>
   
