@@ -192,6 +192,17 @@ Each broker will hold one or more partitions. And each of these partitions can e
 </details>
 
 <details>
+  <summary>Guaranteed Message Ordering</summary>
+  <br/>
+
+  The `max.in.flight.requests.per.connection` setting can be used to increase throughput by allowing the client to send multiple unacknowledged requests before blocking. However it can be is a risk of message re-ordering occurring when retrying due to errors.
+  
+  ![](images/message-ordering-loss-sequence.png)
+  
+</details>
+
+
+<details>
   <summary>Configuration</summary>
   <br/>
 
