@@ -132,6 +132,7 @@ Each broker will hold one or more partitions. And each of these partitions can e
   1. Idempotent Guarantee
   2. Transactional Guarantee
   
+  + Ref: https://www.javacodegeeks.com/2020/05/kafka-exactly-once-semantics.html
   + Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
   + Ref: https://blog.clairvoyantsoft.com/unleash-kafka-producers-architecture-and-internal-working-f33cba6c43aa
 </details>
