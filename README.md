@@ -155,7 +155,11 @@ Each broker will hold one or more partitions. And each of these partitions can e
   <summary>Transactional Guarantee</summary>
   <br/>
 
+  **1. Producer**
   
+  
+  
+  **2. Consumer**
   
   + Ref: https://stackoverflow.com/questions/57321763/kafka-producer-idempotence-exactly-once-or-just-producer-transaction-is-enough
   + Ref: https://stackoverflow.com/questions/56156749/how-does-kafka-know-whether-to-roll-forward-or-roll-back-a-transaction
@@ -173,7 +177,7 @@ Each broker will hold one or more partitions. And each of these partitions can e
 <details>
   <summary>Types of Strategies</summary>
   <br/>
-  
+   
   
   + Ref: https://www.codetd.com/en/article/13051951
   + Ref: https://www.confluent.io/blog/apache-kafka-producer-improvements-sticky-partitioner/
