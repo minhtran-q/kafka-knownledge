@@ -155,12 +155,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
   <summary>Transactional Guarantee</summary>
   <br/>
 
-  + Ref: https://hevodata.com/blog/kafka-exactly-once-semantics/
-  + Ref: https://stackoverflow.com/questions/60283718/difference-between-kafka-idempotent-and-transactional-producer-setup
-  + Ref: https://stackoverflow.com/questions/65069344/can-kafka-idempotent-producer-ensure-exactly-once-with-multiple-partitions
-  + Ref: https://pulsar.apache.org/docs/en/txn-why/
-  + Ref: https://stackoverflow.com/questions/51590351/idempotent-and-transactions#:~:text=Kafka%20idempotent%20is%20a%20feature,exactly%2Donce%20semantics%20for%20producers.
-  + Ref: https://grapeup.com/blog/kafka-transactions-integrating-with-legacy-systems/#:~:text=Transactions%20in%20Kafka%20are%20designed,producer%2Fcoordinator%20handle%20the%20transaction.
+  
+  
   + Ref: https://stackoverflow.com/questions/57321763/kafka-producer-idempotence-exactly-once-or-just-producer-transaction-is-enough
   + Ref: https://stackoverflow.com/questions/56156749/how-does-kafka-know-whether-to-roll-forward-or-roll-back-a-transaction
 </details>
