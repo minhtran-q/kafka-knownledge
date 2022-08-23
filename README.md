@@ -74,9 +74,9 @@ Each broker will hold one or more partitions. And each of these partitions can e
   <summary>Leader, follower, ISRs</summary>
   <br/>
 
-  **Leader partition:** A partition in the topic and is elected as leader. The leader partition responsible for reading/writing data
-  **Follower partition:** A replica of leader on other brokers.
-  **ISRs(in-sync replica):** the replicated partitions (followers) that are in sync with its leader.
+  + **Leader partition:** A partition in the topic and is elected as leader. The leader partition responsible for reading/writing data
+  + **Follower partition:** A replica of leader on other brokers.
+  + **ISRs(in-sync replica):** the replicated partitions (followers) that are in sync with its leader.
   
 </details>
 
