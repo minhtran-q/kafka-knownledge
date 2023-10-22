@@ -117,6 +117,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
 <details>
   <summary>Types of delivery</summary>
   <br/>
+
+  ![](images/types_of_delivery.PNG)
   
   1. At-most once: Message loss is possible if the producer doesn’t retry on failures.
   2. At-least-once: There is no chance of message loss but the message can be duplicated if the producer retries when the message is already persisted.
