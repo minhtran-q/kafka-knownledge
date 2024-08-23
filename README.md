@@ -363,3 +363,4 @@ Each broker will hold one or more partitions. And each of these partitions can e
   
   Ref: https://medium.com/@sunny_81705/kafka-log-retention-and-cleanup-policies-c8d9cb7e09f8
 </details>
+### Dead letter queue
