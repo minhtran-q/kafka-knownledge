@@ -174,6 +174,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
 <details>
   <summary>Idempotent Guarantee</summary>
   <br/>
+
+  This means that even if the producer attempts to send the same message repeatedly, only one copy of the message will be actually sent to the Kafka cluster.
   
   With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is not guaranteed when the producer is restarted.      
   When the producer is restarted, it will get a new `PID` (producer ID).
