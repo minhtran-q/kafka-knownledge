@@ -13,17 +13,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
-<details>
-  <summary>Kafka Replicaton</summary>
-  <br/>
-  
-  + High-throughput: Kafka has a built-in patriation system known as a Topic
-  + Fault-Tolerant: Kafka is resistant to node/machine failure within a cluster.
-  + Durability: As Kafka supports messages replication, so,  messages are never lost. It is one of the reasons behind durability.
-  + Scalability: Kafka can be scaled-out, without incurring any downtime on the fly by adding additional nodes.
-  
-</details>
-
 ## Zookeeper
 ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
 
@@ -81,6 +70,16 @@ Fault tolerance in Kafka is done by copying the partition data to other brokers 
 
 Each broker will hold one or more partitions. And each of these partitions can either be a **replica** or **leader** for the topic. All the writes and reads to a topic go through the **leader** and the **leader** coordinates to update replicas with new data.
 
+
+
+<details>
+  <summary>Kafka Replicaton</summary>
+  <br/>
+
+Every topic partition in Kafka is replicated n times, where n is the _replication factor_ of the topic.
+    
+</details>
+
 <details>
   <summary>Leader, follower, ISRs</summary>
   <br/>
@@ -103,7 +102,6 @@ Each broker will hold one or more partitions. And each of these partitions can e
   + Ref: https://www.confluent.io/blog/hands-free-kafka-replication-a-lesson-in-operational-simplicity/#:~:text=KAFKA%20REPLICATION:%200%20TO%2060%20IN%201%20MINUTE&text=Every%20topic%20partition%20in%20Kafka,in%20the%20presence%20of%20failures.
   + Ref: https://medium.com/@anchan.ashwithabg95/fault-tolerance-in-apache-kafka-d1f0444260cf
 </details>
-
 ### Quorum
 
 
