@@ -108,8 +108,8 @@ Every topic partition in Kafka is replicated n times, where n is the _replicatio
   + Ref: https://www.confluent.io/blog/hands-free-kafka-replication-a-lesson-in-operational-simplicity/#:~:text=KAFKA%20REPLICATION:%200%20TO%2060%20IN%201%20MINUTE&text=Every%20topic%20partition%20in%20Kafka,in%20the%20presence%20of%20failures.
   + Ref: https://medium.com/@anchan.ashwithabg95/fault-tolerance-in-apache-kafka-d1f0444260cf
 </details>
-### Quorum
 
+### Quorum
 
 <details>
   <summary>Formula</summary>
