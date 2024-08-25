@@ -217,7 +217,7 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
   + By combining transactions with idempotence and acks, Kafka ensures exactly-once delivery semantics.
   + A transaction is committed after the producer receives the necessary acknowledgments (acks) for all the messages included in the transaction.
-  + Once all messages have been acknowledged, the producer can commit the transaction using commitTransaction().
+  + Once all messages have been acknowledged, the producer can commit the transaction using `commitTransaction()`.
   
   ```
   Properties props = new Properties();
