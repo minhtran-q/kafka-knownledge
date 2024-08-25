@@ -82,6 +82,7 @@ Every topic partition in Kafka is replicated n times, where n is the _replicatio
   <summary>Leader, follower, ISRs</summary>
   <br/>
 
+  + **Replication Factor:** Each topic has a configurable replication factor, which determines the number of copies of each partition. For example, a **_replication factor_** of **_3_** means there are **_three_** copies of each partition
   + **Leader partition:** A partition in the topic and is elected as leader. The leader partition responsible for reading/writing data
   + **Follower partition:** A replica of leader on other brokers.
   + **ISRs(in-sync replica):** the replicated partitions (followers) that are in sync with its leader.
