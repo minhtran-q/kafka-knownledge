@@ -74,7 +74,9 @@ Each broker will hold one or more partitions. And each of these partitions can e
   <summary>Kafka Replicaton</summary>
   <br/>
 
-Every topic partition in Kafka is replicated n times, where n is the _replication factor_ of the topic.
+  Every topic partition in Kafka is replicated n times, where n is the _replication factor_ of the topic.
+  
+  !()[images/kafka-architecture-topics-replication-to-partition-0.png]
     
 </details>
 
