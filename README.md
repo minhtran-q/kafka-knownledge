@@ -104,6 +104,18 @@ Each broker will hold one or more partitions. And each of these partitions can e
   + Ref: https://medium.com/@anchan.ashwithabg95/fault-tolerance-in-apache-kafka-d1f0444260cf
 </details>
 
+<details>
+  <summary>Recovery</summary>
+  <br/>
+
+  + Kafka ensures that committed messages are replicated to all in-sync replicas.
+  + If a follower falls behind or fails, it is removed from the ISR until it catches up again.
+  + When a failed broker recovers, it starts catching up by pulling data from the current leader until it is fully synchronized.
+  + Once a recovering broker has caught up with the leader’s log, it rejoins the ISR.
+  + Kafka guarantees that a committed message will not be lost as long as there is at least one in-sync replica alive.
+
+</details>
+
 ### Quorum
 
 <details>
