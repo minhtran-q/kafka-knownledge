@@ -238,14 +238,6 @@ Each broker will hold one or more partitions. And each of these partitions can e
   
 </details>
 
-
-<details>
-  <summary>Configuration</summary>
-  <br/>
-
-  
-</details>
-
 ### Partitioning strategies
 
 <details>
