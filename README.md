@@ -1,6 +1,6 @@
 # Kafka knownledge
 Kafka version: 3.1
-## Kafka
+## Kafka Fundamental
 Apache Kafka is a streaming platform that is free and open-source.
 <details>
   <summary>Some features of Kafka</summary>
