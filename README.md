@@ -334,7 +334,7 @@ Each broker will hold one or more partitions. And each of these partitions can e
   
 </details>
 
-## Feature
+## Other Features
 ### Transaction
 <details>
   <summary>Why does Kafka producer produce 2 offsets per message in <strong>transaction</strong> mode?</summary>
