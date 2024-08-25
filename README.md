@@ -53,6 +53,8 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   <summary>Controller election</summary>
   <br/>
 
+  Each partition in Kafka has one leader and multiple followers. The leader handles all read and write requests for that partition.
+
   When the controller goes down,
   1. Zookeeper informs all the brokers that the controller failed.
   2. All the brokers will apply to be the controller.
