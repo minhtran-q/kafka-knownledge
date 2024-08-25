@@ -71,14 +71,6 @@ Fault tolerance in Kafka is done by copying the partition data to other brokers 
 Each broker will hold one or more partitions. And each of these partitions can either be a **replica** or **leader** for the topic. All the writes and reads to a topic go through the **leader** and the **leader** coordinates to update replicas with new data.
 
 <details>
-  <summary>Write-ahead log</summary>
-  <br/>
-
-Every topic partition in Kafka is replicated n times, where n is the _replication factor_ of the topic.
-    
-</details>
-
-<details>
   <summary>Kafka Replicaton</summary>
   <br/>
 
