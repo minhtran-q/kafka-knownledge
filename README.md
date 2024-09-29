@@ -303,10 +303,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
 <details>
   <summary>__consumer_offsets topic</summary>
   <br/>
-
-  Since 0.9v Kafka stores topic offsets on the broker directly instead of relying on Zookeeper.
   
-  Offsets in Kafka are stored as messages in a separate topic named `__consumer_offsets` . Each consumer commits a message into the topic at periodic intervals.
+  Offsets in Kafka are stored as messages in a separate topic named `__consumer_offsets` . Each consumer commits offset into the topic `__consumer_offsets`, ensuring that consumers can resume processing from the correct position in case of failure.
   
   The **Consumer Groups** are stored in the `__consumer_offsets` topic. That topic contains both the committed offsets and the groups metadata (group.id, members, generation, leader, ...). Groups are stored using `GroupMetadataMessage` messages (Offsets use `OffsetsMessage`).
   
@@ -318,6 +316,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
   --bootstrap-server localhost:9092 \
   --topic __consumer_offsets
   ```
+
+  _Note:_ Since 0.9v Kafka stores topic offsets on the broker directly instead of relying on Zookeeper.
   
   + Ref: https://hackernoon.com/kafka-and-zookeeper-offsets-vvbe3xj7
   + Ref: https://stackoverflow.com/questions/59433201/where-are-consumer-groups-list-stored-in-recent-kafka-version#:~:text=Since%20Kafka%200.10%2C%20the%20list,leader%2C%20...).
@@ -343,6 +343,14 @@ Each broker will hold one or more partitions. And each of these partitions can e
   **Scenario 3:** If we have a topic with _4 partitions_ and _1 consumer group_ consisting of _5 consumers_. Then every consumer would be assigned a single partition and the remaining consumer (Consumer5) would be left idle.
 
   **Scenario 4:** If we want to assign multiple consumers to read from the same partition, then you can add these consumers to different consumer groups, and have both of these consumer groups subscribed to the topic.
+  
+</details>
+
+<details>
+  <summary>Group Coordination</summary>
+  <br/>
+
+  Kafka uses a group coordinator to manage the consumers in a group. The coordinator assigns partitions to consumers and handles rebalancing when consumers join or leave the group.
   
 </details>
 
