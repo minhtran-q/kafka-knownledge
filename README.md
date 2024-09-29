@@ -334,15 +334,15 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
   A Kafka consumer group is a collection of consumers that work together to consume data from Kafka topics.  
 
-  Number of partitions greater than number consumers in the same group. Then these consumers whould be assigned a different set of partitions.
+  There are several scenarios need to consider when using consumer group:
+  
+  **Scenario 1:** If we have a topic with _4 partitions_ and _1 consumer group_ consisting of only _1 consumer_. The consumer has subscribed to the topic and is assigned all the partitions to a consumer.
 
-  Scenario 1: If we have a topic with _4 partitions_ and _1 consumer group_ consisting of only _1 consumer_. The consumer has subscribed to the topic and is assigned all the partitions to a consumer.
+  **Scenario 2:** If we have a topic with _4 partitions_ and _1 consumer group_ consisting of _2 consumers_. Consumer1 assigned to read from partitions 0, 2 and and Consumer2 assigned to read from partitions 1, 3.
 
-  Scenario 2: If we have a topic with _4 partitions_ and _1 consumer group_ consisting of _2 consumers_. Consumer1 assigned to read from partitions 0, 2 and and Consumer2 assigned to read from partitions 1, 3.
+  **Scenario 3:** If we have a topic with _4 partitions_ and _1 consumer group_ consisting of _5 consumers_. Then every consumer would be assigned a single partition and the remaining consumer (Consumer5) would be left idle.
 
-  Scenario 3: If we have a topic with _4 partitions_ and _1 consumer group_ consisting of _5 consumers_. Then every consumer would be assigned a single partition and the remaining consumer (Consumer5) would be left idle.
-
-  Scenario 4: If we want to assign multiple consumers to read from the same partition, then you can add these consumers to different consumer groups, and have both of these consumer groups subscribed to the topic.
+  **Scenario 4:** If we want to assign multiple consumers to read from the same partition, then you can add these consumers to different consumer groups, and have both of these consumer groups subscribed to the topic.
   
 </details>
 
