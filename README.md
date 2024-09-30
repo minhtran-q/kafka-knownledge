@@ -31,7 +31,6 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   
 </details>
 
-
 ## Broker
 
 ### Controller
@@ -77,7 +76,9 @@ Each broker will hold one or more partitions. And each of these partitions can e
   <br/>
   
   ![](images/kafka-architecture-topics-replication-to-partition-0.png)
-    
+
+  The broker that has the partition leader handles all reads and writes of records for the partition. Kafka replicates the record in the leader partition to followers. the record is considered “committed” when all in-sync replica partition wrote to their log. 
+  
 </details>
 
 <details>
