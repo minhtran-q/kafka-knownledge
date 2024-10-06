@@ -135,6 +135,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
   + Ref: https://stackoverflow.com/questions/58761164/in-kafka-ha-why-minimum-number-of-brokers-required-are-3-and-not-2#:~:text=While%20doing%20R%26D%2C%20we%20found,zookeeper%20%26%20kafka%20brokers%20are%203.
 </details>
 
+### Topic
+
 ## Producer
 ### Message Delivery Guarantees
 <details>
