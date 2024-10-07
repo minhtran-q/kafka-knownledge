@@ -137,6 +137,15 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
 ### Topic
 
+<details>
+  <summary>What is a partition in Kafka?</summary>
+  <br/>
+
+  + It's a unit of data that can be stored and replicated independently. Each message produced to a topic is assigned to a specific partition within that topic.
+  + One topic can have one or more partition, and each partition is only consumed by one consumer in the same consumer group.
+  
+</details>
+
 ## Producer
 ### Message Delivery Guarantees
 <details>
