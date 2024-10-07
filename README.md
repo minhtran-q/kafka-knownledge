@@ -78,6 +78,15 @@ Each broker will hold one or more partitions. And each of these partitions can e
   ![](images/kafka-architecture-topics-replication-to-partition-0.png)
 
   The broker that has the partition leader handles all reads and writes of records for the partition. Kafka replicates the record in the leader partition to followers. the record is considered “committed” when all in-sync replica partition wrote to their log. 
+
+  **How it works?**
+
+  + The producer sends the message to the leader of the partition. Each partition has one leader and multiple followers.
+  + The leader writes the message to its local log.
+  + Followers pull the message from the leader and write it to their logs.
+  + Once the followers have successfully written the message to their logs, they send an acknowledgment back to the leader.
+  + The leader waits for acknowledgments from all in-sync replicas.
+  + The leader then sends an acknowledgment back to the producer, confirming the message has been successfully replicated and committed.
   
 </details>
 
