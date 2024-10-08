@@ -276,6 +276,8 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
 ## Consumer
 
+### Fundamental concepts
+
 ### Partition assignment strategies
 
 <details>
@@ -429,3 +431,5 @@ Each broker will hold one or more partitions. And each of these partitions can e
 </details>
 
 ### Dead letter queue
+
+### KRaft
