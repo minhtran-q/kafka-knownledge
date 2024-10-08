@@ -438,4 +438,6 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
 ### Dead letter queue
 
+### Log
+
 ### KRaft
