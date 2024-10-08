@@ -278,6 +278,12 @@ Each broker will hold one or more partitions. And each of these partitions can e
 
 ### Fundamental concepts
 
+<details>
+  <summary>Pull vs push</summary>
+  <br/>
+   
+</details>
+
 ### Partition assignment strategies
 
 <details>
