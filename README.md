@@ -28,13 +28,11 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>Why is Zookeeper necessary for Apache Kafka?</summary>
   <br/>
   
-  Zookeeper several primary functions
-  1. **Controller Election**: Leader Election: It manages the leader election process for Kafka partitions.
-  2. **Broker Discovery:** It helps in the discovery of brokers by clients.
-  3. **Cluster Membership:** Zookeeper also maintains a list of all the brokers (ex: ISRs, ...)
-  4. **Topic Configuration:** ZooKeeper maintains the configuration of all topics, including the list of existing topics, number of partitions for each topic, location of the replicas, configuration overrides for topics, preferred leader node, among other details.
-  5. **Access Control Lists:** Access control lists or ACLs for all the topics
-  6. **Metadata Management:** ZooKeeper stores metadata about Kafka topics, partitions, and configurations.
+  **Zookeeper several primary functions:**
+  1. **Registration of Broker:** Kafka brokers register with ZooKeeper to enable other brokers and clients to find and contact them, and ZooKeeper keeps track of active brokers and their connection information.
+  2. **Membership of Cluster:** ZooKeeper keeps track of the Kafka cluster's active brokers and stores membership information, allowing for dynamic cluster membership changes.
+  3. **Controller Election:** ZooKeeper makes the controller election process easier by ensuring that only one broker is the controller.
+  4. **Cluster Events and Alerts:** ZooKeeper sends alerts to Kafka brokers about cluster events and changes. For example, if a broker fails or quits the cluster, ZooKeeper can alert the other brokers.
   
 </details>
 
@@ -43,7 +41,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   <br/>
 
   + When a Kafka broker starts, it initiates a connection to ZooKeeper.
-  + The broker registers itself by creating an entry in ZooKeeper under the `/brokers/ids` znode path.
+  + The broker registers itself by creating an entry in ZooKeeper under the `/brokers/ids` znode path. If a broker fails, its entry is removed from ZooKeeper.
   + The active Kafka controller monitors the `/brokers/ids` znode for changes, detects the new broker registration.
   + The controller sends an `UpdateMetadata` request to all other brokers in the cluster, informing them of the new broker’s presence.
   + Other brokers and clients can now discover and connect to the new broker using the information stored in ZooKeeper.
@@ -58,6 +56,16 @@ Apache Kafka is a streaming platform that is free and open-source.
   + The client sends a metadata request to the bootstrap server. This request asks for information about the cluster, including the list of all brokers, topics, and partitions.
   + The bootstrap server responds with the cluster metadata. (list of all brokers, their addresses, and the partitions they manage.)
   + With this information, the client can then connect to the appropriate brokers directly for producing or consuming messages.
+  
+</details>
+
+<details>
+  <summary>Detecting a broker failure in Kafka</summary>
+  <br/>
+
+  + Brokers send regular heartbeats to ZooKeeper. If ZooKeeper does not receive a heartbeat within a specified time. It marks the broker as failed.
+  + Upon detecting a broker failure, the Kafka controller initiates a leader election process. It selects new leaders from the in-sync replicas (ISR) and updates the metadata accordingly.
+  + The controller updates the cluster metadata then propagated to all clients (producers and consumers).
   
 </details>
 
