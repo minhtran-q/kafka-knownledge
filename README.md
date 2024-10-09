@@ -36,8 +36,17 @@ Apache Kafka is a streaming platform that is free and open-source.
   5. **Access Control Lists:** Access control lists or ACLs for all the topics
   6. **Metadata Management:** ZooKeeper stores metadata about Kafka topics, partitions, and configurations.
   
-  + Ref: https://www.cloudkarafka.com/blog/cloudkarafka-what-is-zookeeper.html
-  + Ref: https://data-flair.training/blogs/zookeeper-in-kafka/
+</details>
+
+<details>
+  <summary>Kafka registration in Zookeeper</summary>
+  <br/>
+
+  + When a Kafka broker starts, it initiates a connection to ZooKeeper.
+  + The broker registers itself by creating an entry in ZooKeeper under the `/brokers/ids` znode path.
+  + The active Kafka controller monitors the `/brokers/ids` znode for changes, detects the new broker registration.
+  + The controller sends an `UpdateMetadata` request to all other brokers in the cluster, informing them of the new broker’s presence.
+  + Other brokers and clients can now discover and connect to the new broker using the information stored in ZooKeeper.
   
 </details>
 
