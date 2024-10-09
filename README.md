@@ -150,16 +150,15 @@ Apache Kafka is a streaming platform that is free and open-source.
   <br/>
 
   When the leader parition goes down:
-  1. The Zookeeper informs the Controller.
-  2. The controller selects one of the in-sync replicas (ISR) as the leader.
-  3. When the broker comes back up, then it will be assigned again as the leader.
+  + The Zookeeper informs the Controller.
+  + The controller selects one of the in-sync replicas (ISR) as the leader.
+  + The controller sends a LeaderAndIsrRequest to the new leader and updates the metadata.
   
   + Ref: https://www.confluent.io/blog/hands-free-kafka-replication-a-lesson-in-operational-simplicity/#:~:text=KAFKA%20REPLICATION:%200%20TO%2060%20IN%201%20MINUTE&text=Every%20topic%20partition%20in%20Kafka,in%20the%20presence%20of%20failures.
   + Ref: https://medium.com/@anchan.ashwithabg95/fault-tolerance-in-apache-kafka-d1f0444260cf
 </details>
-
 <details>
-  <summary>Recovery</summary>
+  <summary>Broker recovery</summary>
   <br/>
 
   + Kafka ensures that committed messages are replicated to all in-sync replicas.
@@ -167,7 +166,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   + When a failed broker recovers, it starts catching up by pulling data from the current leader until it is fully synchronized.
   + Once a recovering broker has caught up with the leader’s log, it rejoins the ISR.
   + Kafka guarantees that a committed message will not be lost as long as there is at least one in-sync replica alive.
-
 </details>
 
 ### Quorum
