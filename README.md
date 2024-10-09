@@ -141,7 +141,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   + **Replication Factor:** Each topic has a configurable replication factor, which determines the number of copies of each partition. For example, a **_replication factor_** of **_3_** means there are **_three_** copies of each partition.
   + **Leader partition:** A partition in the topic and is elected as leader. The leader partition responsible for reading/writing data.
   + **Follower partition:** A follower partition is a replica of a partition that is not the leader.
-  + **ISRs(in-sync replica):** ISRs are replicas of a partition (followers) that are fully synchronized with the leader replica.
+  + **ISRs(in-sync replica):** ISRs are replicas of a partition (followers) that are fully synchronized with the leader replica. ISRs include the leader and followers.
   
 </details>
 
@@ -183,7 +183,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   
   `q` is the total number of nodes, and `n` is the number of allowed failure nodes.
 
-  For example: if `n` = **2**, quorum size is **5**.
+  _For example:_ if `n` = **2**, quorum size is **5**.
   
   + Ref: https://stackoverflow.com/questions/58761164/in-kafka-ha-why-minimum-number-of-brokers-required-are-3-and-not-2#:~:text=While%20doing%20R%26D%2C%20we%20found,zookeeper%20%26%20kafka%20brokers%20are%203.
 </details>
