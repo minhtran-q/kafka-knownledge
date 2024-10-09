@@ -28,11 +28,13 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>Why is Zookeeper necessary for Apache Kafka?</summary>
   <br/>
   
-  Zookeeper has four primary functions
-  1. **Controller Election**
-  2. **Cluster Membership:** Zookeeper also maintains a list of all the brokers (ex: ISRs, ...)
-  3. **Topic Configuration:** ZooKeeper maintains the configuration of all topics, including the list of existing topics, number of partitions for each topic, location of the replicas, configuration overrides for topics, preferred leader node, among other details.
-  4. **Access Control Lists:** Access control lists or ACLs for all the topics
+  Zookeeper several primary functions
+  1. **Controller Election**: Leader Election: It manages the leader election process for Kafka partitions.
+  2. **Broker Discovery:** It helps in the discovery of brokers by clients.
+  3. **Cluster Membership:** Zookeeper also maintains a list of all the brokers (ex: ISRs, ...)
+  4. **Topic Configuration:** ZooKeeper maintains the configuration of all topics, including the list of existing topics, number of partitions for each topic, location of the replicas, configuration overrides for topics, preferred leader node, among other details.
+  5. **Access Control Lists:** Access control lists or ACLs for all the topics
+  6. **Metadata Management:** ZooKeeper stores metadata about Kafka topics, partitions, and configurations.
   
   + Ref: https://www.cloudkarafka.com/blog/cloudkarafka-what-is-zookeeper.html
   + Ref: https://data-flair.training/blogs/zookeeper-in-kafka/
