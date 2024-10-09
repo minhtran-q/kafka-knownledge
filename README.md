@@ -157,7 +157,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Ref: https://stackoverflow.com/questions/58761164/in-kafka-ha-why-minimum-number-of-brokers-required-are-3-and-not-2#:~:text=While%20doing%20R%26D%2C%20we%20found,zookeeper%20%26%20kafka%20brokers%20are%203.
 </details>
 
-### Topic
+### Topic & Partition
 
 <details>
   <summary>What is a partition in Kafka?</summary>
