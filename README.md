@@ -41,7 +41,7 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   
   A controller is not too complex — it is a normal broker that simply has additional responsibility. It's responsible for managing the state of all partitions and replicas
   
-  For example:
+  _For example:_
   + When the leader partition fails, the controller is responsible for selecting a new leader replica for the partition.
   + When the ISR set of a partition changes, the controller is responsible for notifying all brokers to update their metadata information
   + When increasing the number of partitions for a topic, the controller is responsible for the reallocation of partitions.
