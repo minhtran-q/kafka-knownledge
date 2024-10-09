@@ -50,6 +50,17 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
+<details>
+  <summary>Broker discovery</summary>
+  <br/>
+  
+  + When a client starts, it connects to one or more bootstrap servers.
+  + The client sends a metadata request to the bootstrap server. This request asks for information about the cluster, including the list of all brokers, topics, and partitions.
+  + The bootstrap server responds with the cluster metadata. (list of all brokers, their addresses, and the partitions they manage.)
+  + With this information, the client can then connect to the appropriate brokers directly for producing or consuming messages.
+  
+</details>
+
 ## Broker
 
 ### Controller
