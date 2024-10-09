@@ -39,7 +39,7 @@ ZooKeeper is a centralized service for maintaining configuration information, na
   <summary>What is controller?</summary>
   <br/>
   
-  A controller is not too complex — it is a normal broker that simply has additional responsibility. It's responsible for managing the state of all partitions and replicas
+  A controller is not too complex — it is **a normal broker** that simply has additional responsibility. It's responsible for managing the state of all partitions and replicas
   
   _For example:_
   + When the leader partition fails, the controller is responsible for selecting a new leader replica for the partition.
