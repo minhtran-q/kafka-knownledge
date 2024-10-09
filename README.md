@@ -14,7 +14,15 @@ Apache Kafka is a streaming platform that is free and open-source.
 </details>
 
 ## Zookeeper
-ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+
+<details>
+  <summary>What is Zookeeper?</summary>
+  <br/>
+
+  ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.
+  
+</details>
+
 
 <details>
   <summary>Why is Zookeeper necessary for Apache Kafka?</summary>
