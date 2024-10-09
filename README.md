@@ -69,6 +69,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
+
 ## Broker
 
 ### Controller
@@ -166,6 +167,21 @@ Apache Kafka is a streaming platform that is free and open-source.
   + When a failed broker recovers, it starts catching up by pulling data from the current leader until it is fully synchronized.
   + Once a recovering broker has caught up with the leader’s log, it rejoins the ISR.
   + Kafka guarantees that a committed message will not be lost as long as there is at least one in-sync replica alive.
+</details>
+<details>
+  <summary>Broker rebalancing</summary>
+  <br/>
+
+  **Rebalancing can be triggered by several events:**
+
+  + When a new consumer **joins a consumer group**, partitions need to be reassigned to include the new consumer.
+  + When a consumer leaves the group (e.g., due to failure or shutdown), its partitions need to be reassigned to the remaining consumers.
+  + Adding or removing partitions from a topic can also trigger a rebalance to ensure all partitions are assigned.
+
+  **How Rebalancing Works**
+
+  
+  
 </details>
 
 ### Quorum
