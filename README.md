@@ -158,7 +158,7 @@ Each broker will hold one or more partitions. And each of these partitions can e
 ## Producer
 ### Message Delivery Guarantees
 <details>
-  <summary>Types of delivery</summary>
+  <summary>Message Delivery Semantics</summary>
   <br/>
 
   ![](images/types_of_delivery.PNG)
