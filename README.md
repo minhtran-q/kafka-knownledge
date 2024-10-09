@@ -198,6 +198,15 @@ Apache Kafka is a streaming platform that is free and open-source.
   + One topic can have one or more partition, and each partition is only consumed by one consumer in the same consumer group.
   
 </details>
+<details>
+  <summary>Replication factor</summary>
+  <br/>
+
+  The replication factor refers to **the number of copies of a topic’s partitions** that are maintained across different brokers in the cluster.
+
+  ![](images/Rep_Factor_.png)
+  
+</details>
 
 ## Producer
 ### Message Delivery Guarantees
