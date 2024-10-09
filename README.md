@@ -84,11 +84,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   Each broker will hold one or more partitions. And each of these partitions can either be a **replica** or **leader** for the topic. All the writes and reads to a topic go through the **leader** and the **leader** coordinates to update replicas with new data.
 
 </details>
-
-Fault tolerance in Kafka is done by copying the partition data to other brokers which are known as **replicas**. Its also called a _replication factor_.
-
-Each broker will hold one or more partitions. And each of these partitions can either be a **replica** or **leader** for the topic. All the writes and reads to a topic go through the **leader** and the **leader** coordinates to update replicas with new data.
-
 <details>
   <summary>Kafka Replicaton</summary>
   <br/>
