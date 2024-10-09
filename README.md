@@ -20,7 +20,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   <br/>
 
   + ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. 
-  + ZooKeeper is a critical role in a Kafka cluster by providing distributed coordination and synchronization services. 
+  + Apache Kafka, responsible for partition management, message replication, fault tolerance, collaborating and ZooKeeper for cluster coordination and metadata management.
   
 </details>
 
@@ -77,11 +77,14 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>What is controller?</summary>
   <br/>
   
-  A controller is not too complex — it is **a normal broker** that simply has additional responsibility. It's responsible for managing the state of all partitions and replicas
+  A controller is not too complex — it is **a normal broker** that simply has additional responsibility. 
+  
+  + It's responsible for managing the  information about brokers, topics, partitions, and their leaders.
+  + When brokers are added or removed from the cluster, the controller handles the reassignment of partitions to ensure balanced load distribution.
   
   _For example:_
   + When the leader partition fails, the controller is responsible for selecting a new leader replica for the partition.
-  + When the ISR set of a partition changes, the controller is responsible for notifying all brokers to update their metadata information
+  + When the ISR set of a partition changes, the controller is responsible for notifying all brokers to update their metadata information.
   + When increasing the number of partitions for a topic, the controller is responsible for the reallocation of partitions.
 
 </details>
@@ -97,9 +100,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   2. All the brokers will apply to be the controller.
   3. The first broker who applies for this position will become the controller.
   
-  + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302
-  + Ref: https://developpaper.com/kafka-controller-election-principle/
-  + Ref: https://cwiki.apache.org/confluence/display/KAFKA/KIP-631%3A+The+Quorum-based+Kafka+Controller
+  + Ref: https://hackernoon.com/apache-kafkas-distributed-system-firefighter-the-controller-broker-1afca1eae302e/
   
 </details>
 
