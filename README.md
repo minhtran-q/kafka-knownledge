@@ -69,7 +69,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
-
 ## Broker
 
 ### Controller
