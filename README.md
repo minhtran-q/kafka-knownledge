@@ -104,16 +104,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
-### Gourp Coodinator
-
-<details>
-  <summary>About Group Coodinator</summary>
-  <br/>
-
-  In Apache Kafka, there is typically **one Group Coordinator per broker**. The Group Coordinator is responsible for managing consumer groups and their partition assignments on that broker.
-  
-</details>
-
 ### Fault tolerance
 
 <details>
@@ -177,6 +167,17 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Once a recovering broker has caught up with the leader’s log, it rejoins the ISR.
   + Kafka guarantees that a committed message will not be lost as long as there is at least one in-sync replica alive.
 </details>
+
+### Gourp Coodinator
+
+<details>
+  <summary>About Group Coodinator</summary>
+  <br/>
+
+  In Apache Kafka, there is typically **one Group Coordinator per broker**. The Group Coordinator is responsible for managing consumer groups and their partition assignments on that broker.
+  
+</details>
+
 <details>
   <summary>Broker rebalancing</summary>
   <br/>
@@ -188,8 +189,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Adding or removing partitions from a topic can also trigger a rebalance to ensure all partitions are assigned.
 
   **How Rebalancing Works**
-
-  
   
 </details>
 
