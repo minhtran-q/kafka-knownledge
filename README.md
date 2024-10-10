@@ -222,6 +222,27 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
+<details>
+  <summary>Partitioning strategies in Kafka</summary>
+  <br/>
+
+  + **Single Partition:** A topic can have just one partition, which means all the data for that topic is stored in a single place.
+  + **Multiple Partitions:** A topic can be divided into multiple partitions. This allows Kafka to distribute the data across different nodes in the cluster.
+  + **Key-based Partitioning:** When producing messages, you can specify a key. Kafka uses this key to determine the partition for each message, ensuring that messages with the same key always go to the same partition. This is useful for maintaining order for specific keys
+
+  **Why we should use Single partition instead of Key-based Partition?**
+
+  A single partition in Kafka can be limiting for several reasons:
+
+  + **Scalability:**  A single partition limits the throughput and storage capacity.
+  + **Parallelism:** With only one partition, you can’t take advantage of parallel processing.
+
+  _For example:_
+
+  I have an `product` topic with multiple partitions. If I specify a key `productId` for each message, it we always assign to the same partition and make sure maintaining order for specific keys. Each `productId` will be hash and assign to a different partition. This guarantee we can archive Parallelism.
+  
+</details>
+
 ## Producer
 ### Message Delivery Guarantees
 <details>
