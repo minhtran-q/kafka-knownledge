@@ -174,7 +174,13 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>About Group Coodinator</summary>
   <br/>
 
-  In Apache Kafka, there is typically **one Group Coordinator per broker**. The Group Coordinator is responsible for managing consumer groups and their partition assignments on that broker.
+  In Apache Kafka, there is typically **one Group Coordinator per broker**.
+
+  + The Group Coordinator is responsible for assigning partitions of a topic to the consumers in a group.
+  + It maintains metadata about the consumer group, such as the list of `consumer`, their `assigned partitions`, and their `offsets`.
+  + When a consumer joins or leaves the group, the Group Coordinator triggers a rebalance to redistribute the partitions among the remaining consumers.
+
+  ![](images/group_coodinator.png)
   
 </details>
 
