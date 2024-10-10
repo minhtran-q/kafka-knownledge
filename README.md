@@ -410,6 +410,28 @@ Apache Kafka is a streaming platform that is free and open-source.
   --topic __consumer_offsets
   ```
 
+  Example record in `__consumer_offsets`:
+
+  ```
+  {
+    "group_id": "my-consumer-group",
+    "topic": "my-topic",
+    "partition": 0,
+    "offset": 12345,
+    "metadata": "",
+    "commit_timestamp": 1633024800000,
+    "leader_epoch": 42
+  }
+  ```
+
+  + **group_id:** The ID of the consumer group (`my-consumer-group`).
+  + **topic:** The name of the topic being consumed (`my-topic`).
+  + **partition:** The partition number within the topic (0).
+  + **offset:** The position of the next message to be read (12345).
+  + **metadata:** Any additional metadata (empty in this case).
+  + **commit_timestamp:** The timestamp when the offset was committed (in milliseconds since epoch).
+  + **leader_epoch:** The epoch of the leader broker for the partition at the time of the commit.
+
   _Note:_ Since 0.9v Kafka stores topic offsets on the broker directly instead of relying on Zookeeper.
   
   + Ref: https://hackernoon.com/kafka-and-zookeeper-offsets-vvbe3xj7
