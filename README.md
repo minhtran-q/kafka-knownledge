@@ -168,33 +168,19 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Kafka guarantees that a committed message will not be lost as long as there is at least one in-sync replica alive.
 </details>
 
-### Gourp Coodinator
+### Group Coodinator
 
 <details>
   <summary>About Group Coodinator</summary>
   <br/>
 
-  In Apache Kafka, there is typically **one Group Coordinator per broker**.
+  The Group Coordinator manages the consumer group and the consumers. This is a Kafka component that lives on the broker side. This mean that there is **one Group Coordinator per broker**.
 
   + The Group Coordinator is responsible for assigning partitions of a topic to the consumers in a group.
   + It maintains metadata about the consumer group, such as the list of `consumer`, their `assigned partitions`, and their `offsets`.
-  + When a consumer joins or leaves the group, the Group Coordinator triggers a rebalance to redistribute the partitions among the remaining consumers.
+  + When a consumer joins or leaves the group, the Group Coordinator triggers a rebalance to redistribute the partitions among remaining consumers.
 
   ![](images/group_coodinator.png)
-  
-</details>
-
-<details>
-  <summary>Broker rebalancing</summary>
-  <br/>
-
-  **Rebalancing can be triggered by several events:**
-
-  + When a new consumer **joins a consumer group**, partitions need to be reassigned to include the new consumer.
-  + When a consumer leaves the group (e.g., due to failure or shutdown), its partitions need to be reassigned to the remaining consumers.
-  + Adding or removing partitions from a topic can also trigger a rebalance to ensure all partitions are assigned.
-
-  **How Rebalancing Works**
   
 </details>
 
@@ -474,6 +460,29 @@ Apache Kafka is a streaming platform that is free and open-source.
 
   **Scenario 4:** If we want to assign multiple consumers to read from the same partition, then you can add these consumers to different consumer groups, and have both of these consumer groups subscribed to the topic.
   
+</details>
+
+<details>
+  <summary>Consumer Group Rebalance</summary>
+  <br/>
+
+  **Rebalancing can be triggered by several events:**
+
+  + When a new consumer **joins a consumer group**, partitions need to be reassigned to include the new consumer.
+  + When a consumer leaves the group (e.g., due to failure or shutdown), its partitions need to be reassigned to the remaining consumers.
+  + When new partitions are added to a topic or existing ones are deleted.
+
+  **How Consumer Group Rebalance works**
+
+  + When a rebalance is triggered, the group coordinator notifies all consumers in the group.
+  + Each consumer sends a `JoinGroup` request to the coordinator.
+  + The group coordinator uses a partition assignment strategy (e.g., _round-robin_, _range_, _sticky_) to assign partitions to consumers.
+  + The coordinator sends the assignment to each consumer, then consumer starts consuming from the assigned partitions.
+
+  **Types of Rebalancing**
+
+  + **Stop-the-World Rebalancing:** All consumers stop processing during the rebalance.
+  + **Incremental Cooperative Rebalancing:** Consumers only stop processing the partitions that are being reassigned.
 </details>
 
 <details>
