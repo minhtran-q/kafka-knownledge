@@ -232,7 +232,7 @@ Apache Kafka is a streaming platform that is free and open-source.
 
   **Why we should use Single partition instead of Key-based Partition?**
 
-  A single partition in Kafka can be limiting for several reasons:
+  _A single partition in Kafka can be limiting for several reasons:_
 
   + **Scalability:**  A single partition limits the throughput and storage capacity.
   + **Parallelism:** With only one partition, you can’t take advantage of parallel processing.
