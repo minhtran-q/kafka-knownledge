@@ -239,7 +239,7 @@ Apache Kafka is a streaming platform that is free and open-source.
 
   _For example:_
 
-  I have an `product` topic with multiple partitions. If I specify a key `productId` for each message, it we always assign to the same partition and make sure maintaining order for specific keys. Each `productId` will be hash and assign to a different partition. This guarantee we can archive Parallelism.
+  E-commerce platforms often use key-based partitioning to ensure that all messages related to _a specific product or user_ are assigned to the same partition. This preserves message order and allows for efficient processing of data related to a specific key. 
   
 </details>
 
