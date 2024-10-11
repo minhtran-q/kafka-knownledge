@@ -309,16 +309,11 @@ Apache Kafka is a streaming platform that is free and open-source.
 
   When a message is received by the broker, it checks the **sequence number** against the last sequence number it received from that producer. If the sequence number is higher, the message is accepted and written to the log. If it’s a duplicate (i.e., the same sequence number as a previously received message), the broker discards it. Even if the producer attempts to send the same message repeatedly, only one copy of the message will be actually sent to the Kafka cluster.
   
-  With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is not guaranteed when the producer is restarted. When the producer is restarted, it will get a new `PID` (producer ID).
+  With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is **NOT** guaranteed when the producer is restarted. When the producer is restarted, it will get a new `PID` (producer ID). To address this problem, we come with _**Transactional Guarantee**_.
   
   ![](images/idempotent-producer.png)
 
-   To enable idempotence, you need to set: 
-  
-  ```
-  producerProps.put("enable.idempotence", "true");
-  producerProps.put("transactional.id", "100");
-  ```
+  To enable idempotence, you need to set: `producerProps.put("enable.idempotence", "true");`. And if we declare `producerProps.put("transactional.id", "100");` the idempotence also consider enable implicitly.
   
   + Ref: https://medium.com/@shesh.soft/kafka-idempotent-producer-and-consumer-25c52402ceb9
 </details>
