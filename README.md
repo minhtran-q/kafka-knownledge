@@ -464,6 +464,11 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Ref: https://stackoverflow.com/questions/59433201/where-are-consumer-groups-list-stored-in-recent-kafka-version#:~:text=Since%20Kafka%200.10%2C%20the%20list,leader%2C%20...).
     
 </details>
+<details>
+  <summary>Transaction isolation level</summary>
+  <br/>
+  
+</details>
 
 ### Consumer group
 
