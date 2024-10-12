@@ -409,6 +409,12 @@ Apache Kafka is a streaming platform that is free and open-source.
 <details>
   <summary>Pull vs push</summary>
   <br/>
+
+  Kafka primarily uses a pull-based model for consumers. Here’s why:
+
+  + **Consumer Control:** Consumers can control their consumption rate, it is crucial for handling varying loads.
+  + **Efficient Batching:** Consumers can pull batches of messages, it is more efficient than receiving one message at a time.
+  + **Flexibility:** Consumers can re-read messages by specifying offsets, which is useful for replaying data or handling errors.
    
 </details>
 
