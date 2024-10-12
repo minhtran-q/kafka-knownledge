@@ -243,7 +243,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
-### Important configurations
+### Broker configurations
 
 ## Producer
 ### Message Delivery Guarantees
@@ -383,7 +383,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Ref: https://www.confluent.io/blog/apache-kafka-producer-improvements-sticky-partitioner/
 </details>
 
-### Important configurations
+### Producer configurations
 
 ## Consumer
 
@@ -515,9 +515,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
-### Important configurations
-
-
+### Consumer configurations
 
 ## Other Features
 ### Message
