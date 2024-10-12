@@ -313,11 +313,13 @@ Apache Kafka is a streaming platform that is free and open-source.
   + **Producer ID:** Each producer is assigned a unique ID by the Kafka broker. This ID helps in tracking messages from that producer.
   + **Sequence Numbers:** Every message sent by the producer includes a sequence number. This sequence number is unique and incremented for each message.
 
-  When a message is received by the broker, it checks the **sequence number** against the last sequence number it received from that producer. If the sequence number is higher, the message is accepted and written to the log. If it’s a duplicate (i.e., the same sequence number as a previously received message), the broker discards it. Even if the producer attempts to send the same message repeatedly, only one copy of the message will be actually sent to the Kafka cluster.
-  
-  With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is **NOT** guaranteed when the producer is restarted. When the producer is restarted, it will get a new `PID` (producer ID). To address this problem, we come with _**Transactional Guarantee**_.
-  
   ![](images/idempotent-producer.png)
+
+  **How does it works?**
+
+  When a message is received by the broker, it checks the **sequence number** against the last sequence number it received from that producer. If the sequence number is higher, the message is accepted and written to the log. If it’s a duplicate (i.e., the same sequence number as a previously received message), the broker discards it. Even if the producer attempts to send the same message repeatedly, only one copy of the message will be actually sent to the Kafka cluster.
+
+  With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is **NOT** guaranteed when the producer is restarted. When the producer is restarted, it will get a new `PID` (producer ID). To address this problem, we come with _**Transactional Guarantee**_.
 
   To enable idempotence, you need to set: `producerProps.put("enable.idempotence", "true");`. And if we declare `producerProps.put("transactional.id", "100");` the idempotence also consider enable implicitly.
   
@@ -326,13 +328,22 @@ Apache Kafka is a streaming platform that is free and open-source.
 <details>
   <summary>Transactional Guarantee</summary>
   <br/>
+  
+  Transactional Guarantee ensures _exactly-once_ processing on multiple topic-partitions and also supports _exactly-once_ across multiple producer sessions even when the producer is restarted multiple times. To archive Transactional Guarantee we need to configure `transactional.id`, `acks` & `isolation.level`.
+  
+  `transactional.id`
 
-  + This ensures _exactly-once_ processing on multiple Topic-Partitions and also supports _exactly-once_ across multiple producer sessions even when the producer is restarted multiple times.
+  The producer initiates initPidRequest() to the Transaction Coordinator passing `transactional.id`. The Transaction Coordinator returns Product ID (_PID_) and epoch number in response. By this way, the producer can maintaince the Product ID even when the producer is restarted multiple times.
   
-  + By combining transactions with idempotence and acks, Kafka ensures exactly-once delivery semantics.
-  + A transaction is committed after the producer receives the necessary acknowledgments (acks) for all the messages included in the transaction.
-  + Once all messages have been acknowledged, the producer can commit the transaction using `commitTransaction()`.
+  `acks=all`  
   
+  Config `acks=all`, it means the leader will wait for the full set of in-sync replicas to acknowledge the record. This ensures the transaction messages are stored across all in-sync replicas, preventing data loss.
+
+  `isolation.level`
+  
+  Setting `isolation.level` to `read_committed`, `consumer.poll()` will only return transactional messages which have been committed. 
+  
+  _Configurations:_
   ```
   Properties props = new Properties();
   props.put("acks", "all");
@@ -340,6 +351,10 @@ Apache Kafka is a streaming platform that is free and open-source.
   props.put("transactional.id", "my-transactional-id");
   KafkaProducer<String, String> producer = new KafkaProducer<>(props);
   ```
+
+  + By combining transactions with idempotence and acks, Kafka ensures exactly-once delivery semantics.
+  + A transaction is committed after the producer receives the necessary acknowledgments (acks) for all the messages included in the transaction.
+  + Once all messages have been acknowledged, the producer can commit the transaction using `commitTransaction()`.
   
   + Ref: https://stackoverflow.com/questions/57321763/kafka-producer-idempotence-exactly-once-or-just-producer-transaction-is-enough
   + Ref: https://stackoverflow.com/questions/56156749/how-does-kafka-know-whether-to-roll-forward-or-roll-back-a-transaction
