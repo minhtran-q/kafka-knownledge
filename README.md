@@ -556,11 +556,21 @@ Apache Kafka is a streaming platform that is free and open-source.
 <details>
   <summary>Control Messages</summary>
   <br/>
+
+  These are special types of messages used internally by Kafka to manage control operations 
+
+  Types of Control Messages:
+  + **Offset Commit Messages:** Track the read position of consumers within partitions.
+  + **Transaction Control Messages:** Ensure atomicity and consistency for Kafka transactions.
+  + **Group Coordination Messages:** Manage consumer group membership and rebalancing.
+  
+</details>
+<details>
+  <summary>Serialization and Deserialization</summary>
+  <br/>
   
 </details>
 
-Serialization and Deserialization
-Control Messages
 ### Transaction
 <details>
   <summary>Transaction isolation level</summary>
