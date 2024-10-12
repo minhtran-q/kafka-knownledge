@@ -255,6 +255,8 @@ Apache Kafka is a streaming platform that is free and open-source.
 
   ![](images/produce_message_flow.png)
 
+  Ref: https://blog.clairvoyantsoft.com/unleash-kafka-producers-architecture-and-internal-working-f33cba6c43aa
+
 </details>
 
 ### Message Delivery Guarantees
