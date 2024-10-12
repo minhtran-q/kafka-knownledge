@@ -532,6 +532,14 @@ Apache Kafka is a streaming platform that is free and open-source.
   
   Ref: https://stackoverflow.com/questions/59152915/spring-kafka-transaction-causes-producer-per-message-offset-increased-by-two#:~:text=The%20offset%20is%20increased%20by,t%20commit%20the%20consuming%20offset.&text=However%20the%20count%20of%20messages,the%20msgs%20from%20topic2%20continuously.
 </details>
+<details>
+  <summary>Transaction Coordinator</summary>
+  <br/>
+
+  Transaction Coordinator is a module which runs inside each broker, it responsible for managing transactions, ensures the _atomicity_, _consistency_, _isolation_, and _durability_ (ACID) of transactions across multiple topics.
+
+  Transaction Coordinator maintains a map of `transactional.id` to Transaction Metadata in-memory.
+</details>
 
 ### Data retention
 <details>
