@@ -536,6 +536,31 @@ Apache Kafka is a streaming platform that is free and open-source.
 </details>
 
 ## Other Features
+### Message
+
+<details>
+  <summary>Kafka Message Format</summary>
+  <br/>
+
+  + Key: This is optional and can be used to determine the partition within a topic where the message will be sent. It can also be used to uniquely identify a message within a Kafka topic.
+  + Value: This is the actual data payload of the message. It can be any type of data, such as a string, JSON, or Avro.
+  + Timestamp: This the time at the message was produced.
+  
+</details>
+
+<details>
+  <summary>Serialization and Deserialization</summary>
+  <br/>
+  
+</details>
+<details>
+  <summary>Control Messages</summary>
+  <br/>
+  
+</details>
+
+Serialization and Deserialization
+Control Messages
 ### Transaction
 <details>
   <summary>Transaction isolation level</summary>
@@ -559,7 +584,9 @@ Apache Kafka is a streaming platform that is free and open-source.
   
   For example: 
   + The producer publish 10 messages, and the current offset will be 11.
-  + The producer publish 1 message, and current offset will be 2
+  + The producer publish 1 message, and current offset will be 2.
+
+  The extra message is called _Transaction Offset Markers_, Kafka writes markers (commit or abort) to indicate the status of the transaction.
   
   Ref: https://stackoverflow.com/questions/59152915/spring-kafka-transaction-causes-producer-per-message-offset-increased-by-two#:~:text=The%20offset%20is%20increased%20by,t%20commit%20the%20consuming%20offset.&text=However%20the%20count%20of%20messages,the%20msgs%20from%20topic2%20continuously.
 </details>
