@@ -254,6 +254,12 @@ Apache Kafka is a streaming platform that is free and open-source.
   1. At-most once: Message loss is possible if the producer doesn’t retry on failures.
   2. At-least-once: There is no chance of message loss but the message can be duplicated if the producer retries when the message is already persisted.
   3. Exactly-once: Every message is guaranteed to be persisted in Kafka exactly once without any duplicates and data loss even where there is a broker failure or producer retry.
+
+  **These different scenarios introduced a different kind of data loss and duplication:**
+
+  + **Ack Failed:** Producer published message successfully with retry>1 but could not received acknowledge due to failure. In that case Producer will retry same message might introduce duplicate.
+  + **Producer process failed in batch messages:** In that case and once producer will restart it will again republish all message from batch which will introduce duplicate in Kafka.
+  + **Fire & Forget Failed:** Producer published message with retry=0(fire and forget). In case of failure, this will cause message lost.
   
   Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
 </details>
