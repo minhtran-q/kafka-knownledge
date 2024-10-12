@@ -243,6 +243,8 @@ Apache Kafka is a streaming platform that is free and open-source.
   
 </details>
 
+### Important configurations
+
 ## Producer
 ### Message Delivery Guarantees
 <details>
@@ -381,6 +383,8 @@ Apache Kafka is a streaming platform that is free and open-source.
   + Ref: https://www.confluent.io/blog/apache-kafka-producer-improvements-sticky-partitioner/
 </details>
 
+### Important configurations
+
 ## Consumer
 
 ### Fundamental concepts
@@ -410,30 +414,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   ![](images/consumer-fetch.png)
   
   Ref: https://www.conduktor.io/kafka/kafka-consumer-important-settings-poll-and-internal-threads-behavior
-</details>
-
-<details>
-  <summary>Some important consumers</summary>
-  <br/>
-  
-  `fetch.min.bytes`
-  
-  `fetch.max.bytes`
-  
-  `fetch.max.wait.ms`
-  
-  `max.partition.fetch.bytes`
-  
-  `max.poll.records`
-  
-  `max.poll.interval.ms`
-  
-  `session.timeout.ms`
-  
-  `partition.assignment.strategy`
-  
-  + Ref: https://www.oreilly.com/library/view/kafka-the-definitive/9781491936153/ch04.html#:~:text=fetch.max.wait.ms,amount%20of%20data%20to%20return
-  + Ref: https://cwiki.apache.org/confluence/display/KAFKA/KIP-74%3A+Add+Fetch+Response+Size+Limit+in+Bytes
 </details>
 
 <details>
@@ -534,6 +514,10 @@ Apache Kafka is a streaming platform that is free and open-source.
   Kafka uses a group coordinator to manage the consumers in a group. The coordinator assigns partitions to consumers and handles rebalancing when consumers join or leave the group.
   
 </details>
+
+### Important configurations
+
+
 
 ## Other Features
 ### Message
