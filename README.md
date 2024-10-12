@@ -540,7 +540,16 @@ Apache Kafka is a streaming platform that is free and open-source.
 <details>
   <summary>Transaction isolation level</summary>
   <br/>
-  
+
+  Transaction isolation level determines how transactional records are exposed to consumers. There are two isolation levels:
+
+  1. `read_uncommitted`: Consumers can read all records, this means they will see records from committed and uncommitted (or aborted) transactions.
+  2. `read_committed`: Consumers only read records from committed transactions.
+
+  ```
+  Properties consumerProps = new Properties();
+  consumerProps.put("isolation.level", "read_committed");
+  ```
 </details>
 <details>
   <summary>Why does Kafka producer produce 2 offsets per message in <strong>transaction</strong> mode?</summary>
