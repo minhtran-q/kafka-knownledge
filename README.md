@@ -567,6 +567,10 @@ Apache Kafka is a streaming platform that is free and open-source.
   Properties consumerProps = new Properties();
   consumerProps.put("isolation.level", "read_committed");
   ```
+
+  **Latest Stable Offset**
+
+  **High Watermark Offset**
 </details>
 <details>
   <summary>Why does Kafka producer produce 2 offsets per message in <strong>transaction</strong> mode?</summary>
