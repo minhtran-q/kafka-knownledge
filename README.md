@@ -368,11 +368,6 @@ Apache Kafka is a streaming platform that is free and open-source.
   <br/>
    
 </details>
-<details>
-  <summary>Transaction isolation level</summary>
-  <br/>
-  
-</details>
 
 ### Partition assignment strategies
 
@@ -520,6 +515,11 @@ Apache Kafka is a streaming platform that is free and open-source.
 
 ## Other Features
 ### Transaction
+<details>
+  <summary>Transaction isolation level</summary>
+  <br/>
+  
+</details>
 <details>
   <summary>Why does Kafka producer produce 2 offsets per message in <strong>transaction</strong> mode?</summary>
   <br/>
