@@ -277,7 +277,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   
   A Unique Identifier assigned to the producer by the broker.
 
-  If `transactional.id` is not specified, a fresh PID is generated every-time on producer initialization. If `transactional.id` is specified,the broker stores mapping of Transactional ID to PID so that it can return the same PID on producer restart.
+  If `transactional.id` is not specified, a fresh PID is generated every-time on producer initialization. If `transactional.id` is specified, the broker stores mapping of Transactional ID to PID so that it can return the same PID on producer restart.
   
   2. _Epoch Number_
   
@@ -293,11 +293,11 @@ Apache Kafka is a streaming platform that is free and open-source.
   
   5. _Transaction Coordinator_
   
-  Transaction Coordinator maintains a map of `transactional.id` holds the metadata includes: PID, Epoch Number, transaction timeout, last updated time of the transaction, transaction status, list of Topic Partitions
+  Transaction Coordinator maintains a map of `transactional.id` holds the metadata includes: _PID_, _Epoch Number_, _transaction timeout_, _last updated time of the transaction_, _transaction status_, _list of topic partitions_.
   
   6. _Transaction Log_
   
-  __transaction_state topic
+  ___transaction_state_ topic.
   
   + Ref: https://ssudan16.medium.com/exactly-once-processing-in-kafka-explained-66ecc41a8548#:~:text=Exactly%2Donce%3A%20Every%20message%20is,broker%20failure%20or%20producer%20retry.
   
@@ -327,13 +327,14 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>Transactional Guarantee</summary>
   <br/>
 
+  + This ensures _exactly-once_ processing on multiple Topic-Partitions and also supports _exactly-once_ across multiple producer sessions even when the producer is restarted multiple times.
+  
   + By combining transactions with idempotence and acks, Kafka ensures exactly-once delivery semantics.
   + A transaction is committed after the producer receives the necessary acknowledgments (acks) for all the messages included in the transaction.
   + Once all messages have been acknowledged, the producer can commit the transaction using `commitTransaction()`.
   
   ```
   Properties props = new Properties();
-  props.put("bootstrap.servers", "localhost:9092");
   props.put("acks", "all");
   props.put("enable.idempotence", "true");
   props.put("transactional.id", "my-transactional-id");
