@@ -541,6 +541,15 @@ Apache Kafka is a streaming platform that is free and open-source.
   Transaction Coordinator maintains a map of `transactional.id` to Transaction Metadata in-memory.
 </details>
 
+<details>
+  <summary>Consume-transform-produce</summary>
+  <br/>
+</details>
+<details>
+  <summary>Produce-consume</summary>
+  <br/>
+</details>
+
 ### Data retention
 <details>
   <summary>Types of Cleanup Policies</summary>
