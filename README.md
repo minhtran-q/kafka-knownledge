@@ -323,7 +323,9 @@ Apache Kafka is a streaming platform that is free and open-source.
 
   With **idempotent guarantee**, this ensures _exactly-one_ only in a **single producer session**. _Exactly-one_ is **NOT** guaranteed when the producer is restarted. When the producer is restarted, it will get a new `PID` (producer ID). To address this problem, we come with _**Transactional Guarantee**_.
 
-  To enable idempotence, you need to set: `producerProps.put("enable.idempotence", "true");`. And if we declare `producerProps.put("transactional.id", "100");` the idempotence also consider enable implicitly.
+  To enable idempotence, you need to set: `producerProps.put("enable.idempotence", "true");`. 
+  
+  _Note:_ Enable idempotence requires `max.in.flight.requests.per.connection` to be less than or equal to `5` (with message ordering preserved for any allowable value), `retries` to be greater than `0`, and `acks` must be `'all'`.
   
   + Ref: https://medium.com/@shesh.soft/kafka-idempotent-producer-and-consumer-25c52402ceb9
 </details>
@@ -331,7 +333,7 @@ Apache Kafka is a streaming platform that is free and open-source.
   <summary>Transactional Guarantee</summary>
   <br/>
   
-  Transactional Guarantee ensures _exactly-once_ processing on multiple topic-partitions and also supports _exactly-once_ across multiple producer sessions even when the producer is restarted multiple times. To archive Transactional Guarantee we need to configure `transactional.id`, `acks` & `isolation.level`.
+  Transactional Guarantee ensures _exactly-once_ processing on multiple topic-partitions and also supports _exactly-once_ across multiple producer sessions even when the producer is restarted multiple times. To archive Transactional Guarantee we need to configure `transactional.id` & `isolation.level`.
   
   `transactional.id`
 
@@ -354,6 +356,8 @@ Apache Kafka is a streaming platform that is free and open-source.
   KafkaProducer<String, String> producer = new KafkaProducer<>(props);
   ```
 
+  _Note:_ If we declare `producerProps.put("transactional.id", "100");` the idempotence also consider enable implicitly.
+
   + By combining transactions with idempotence and acks, Kafka ensures exactly-once delivery semantics.
   + A transaction is committed after the producer receives the necessary acknowledgments (acks) for all the messages included in the transaction.
   + Once all messages have been acknowledged, the producer can commit the transaction using `commitTransaction()`.
@@ -369,6 +373,8 @@ Apache Kafka is a streaming platform that is free and open-source.
   The `max.in.flight.requests.per.connection` setting can be used to increase throughput by allowing the client to send multiple unacknowledged requests before blocking. However it can be is a risk of message re-ordering occurring when retrying due to errors.
   
   ![](images/message-ordering-loss-sequence.png)
+
+  If maintaining strict message order is critical, setting this value to **1** ensures that messages are sent and acknowledged in order.
   
 </details>
 
