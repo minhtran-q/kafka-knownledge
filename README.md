@@ -246,6 +246,17 @@ Apache Kafka is a streaming platform that is free and open-source.
 ### Broker configurations
 
 ## Producer
+
+### Fundamental concepts
+
+<details>
+  <summary>How producer actually work?</summary>
+  <br/>
+
+  ![](images/produce_message_flow.png)
+
+</details>
+
 ### Message Delivery Guarantees
 <details>
   <summary>Message Delivery Semantics</summary>
